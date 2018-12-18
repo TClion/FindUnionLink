@@ -19,11 +19,19 @@ def get_html(url):
         print "Page cannot be accessed"
         sys.exit(0)
 
+
 def find_coinhive_js(html):
     coinjs = re.compile(r'https://coinhive.com/lib/coinhive.min.js')
     result = coinjs.search(html)
     if result:
         print 'This page have coinhive code'
+
+
+def find_2345_union_link(html):
+    union_link = re.compile(r'http://www.2345.com/\?\d+')
+    result = union_link.search(html)
+    if result:
+        print 'This page have 2345 union link'
 
 
 def find_jd_union_link(html):
@@ -32,10 +40,9 @@ def find_jd_union_link(html):
     if result:
         print 'This page have jd union link'
 
-
-
 if __name__ == '__main__':
     url = "http://www.baidu.com"
     html = get_html(url)
     find_coinhive_js(html)
     find_jd_union_link(html)
+    find_2345_union_link(html)
