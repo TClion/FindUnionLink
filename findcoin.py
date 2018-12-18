@@ -35,10 +35,17 @@ def find_2345_union_link(html):
 
 
 def find_jd_union_link(html):
-    jdurl = re.compile(r'https://union-click.jd.com/jdc\?d=')
-    result = jdurl.search(html)
+    jd = re.compile(r'https://union-click.jd.com/jdc\?d=')
+    result = jd.search(html)
     if result:
         print 'This page have jd union link'
+
+
+def find_taobaoke_link(html):
+    taobaoke = re.compile(r'http://ai.taobao.com/\?pid=')
+    result = taobaoke.search(html)
+    if result:
+        print 'This page have taobaoke union link'
 
 if __name__ == '__main__':
     url = "http://www.baidu.com"
@@ -46,3 +53,4 @@ if __name__ == '__main__':
     find_coinhive_js(html)
     find_jd_union_link(html)
     find_2345_union_link(html)
+    find_taobaoke_link(html)
