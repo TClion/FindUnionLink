@@ -41,7 +41,7 @@ def find_jd_union_link(html):
         print 'This page have jd union link'
 
 
-def find_taobaoke_link(html):
+def find_taobaoke_union_link(html):
     taobaoke = re.compile(r'http://ai.taobao.com/\?pid=')
     result = taobaoke.search(html)
     if result:
