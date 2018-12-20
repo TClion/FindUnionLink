@@ -47,10 +47,18 @@ def find_taobaoke_union_link(html):
     if result:
         print 'This page have taobaoke union link'
 
+
+def find_hao123_union_link(html):
+    hao123 = re.compile(r'http://www.hao123.com/\?tn=\d+_hao_pg')
+    result = hao123.search(html)
+    if result:
+        print 'This page have hao123 union link'
+
 if __name__ == '__main__':
-    url = "http://www.baidu.com"
+    url = "http://www.2345.com"
     html = get_html(url)
     find_coinhive_js(html)
     find_jd_union_link(html)
     find_2345_union_link(html)
-    find_taobaoke_link(html)
+    find_taobaoke_union_link(html)
+    find_hao123_union_link(html)
