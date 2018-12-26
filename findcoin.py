@@ -54,6 +54,13 @@ def find_hao123_union_link(html):
     if result:
         print 'This page have hao123 union link'
 
+
+def find_vip_union_link(html):
+    vip = re.compile(r'https://click\.union\.vip\.com/redirect\.php\?code=')
+    result = vip.search(html)
+    if result:
+        print 'This page have vip union link'
+
 if __name__ == '__main__':
     url = "http://www.2345.com"
     html = get_html(url)
